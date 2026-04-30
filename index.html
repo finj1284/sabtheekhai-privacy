@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy — Sab Theek Hain</title>
+  <title>Privacy Policy — Sab Theek Hai</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -152,8 +152,16 @@
       and your rights over your data.
     </p>
     <p>
-      By using Sab Theek Hain, you agree to the terms described in this policy.
+      We obtain your explicit, informed consent before collecting any personal data, as required by the Digital Personal Data 
+      Protection Act 2023 (DPDP Act). You will be asked to review and actively agree to this policy before creating an account.
       If you do not agree, please do not use the app.
+      You may withdraw your consent at any time from Settings → My Data → Withdraw Consent
+
+      Withdraw consent — you may withdraw consent for location data collection at any time from Settings → My Data → Withdraw Consent, 
+      without deleting your account. Withdrawing consent disables location-based features.
+
+      Account deletion — permanently delete your account and all data from Settings → Account → Delete Account. All data is purged 
+      within 30 days.
     </p>
     <div class="highlight">
       <p>✅ We do not collect biometric data, face recognition data, or photos.
@@ -198,9 +206,11 @@
         <td>To show your activity history and usage statistics</td>
       </tr>
       <tr>
-        <td><strong>Approximate location</strong></td>
-        <td>City-level only (if you grant permission)</td>
-        <td>Optional — included in Telegram alert message only</td>
+        <td><strong>Precise GPS location</strong></td>
+        <td>Latitude/longitude coordinates — collected ONLY when you actively tap Check-in or SOS.
+        Sent to emergency contacts via Telegram.Coordinates purged from our servers after 30 days.
+        Never collected in background without your action.</td>
+        <td>Approximate location - City-level fallback when precise GPS is unavailable. Optional. </td>
       </tr>
       <tr>
         <td><strong>Device timezone</strong></td>
@@ -219,11 +229,14 @@
       <li>❌ No photos or images of any kind</li>
       <li>❌ No biometric data (fingerprints, face data, iris scans)</li>
       <li>❌ No face recognition or facial landmark data</li>
-      <li>❌ No precise GPS coordinates stored on our servers</li>
+      <li>❌ Precise GPS coordinates are never stored permanently purged within 30 days and never used for any purpose other than the alert you actively triggered — </li>
       <li>❌ No contacts from your phone's address book</li>
       <li>❌ No microphone audio</li>
       <li>❌ No browsing history or data from other apps</li>
       <li>❌ No advertising identifiers</li>
+      
+      <li>   Device identifier (FCM token) | Push notification token assigned by Google | To send safety reminders and SOS alerts to your device. Not linked to your identity. 
+             Rotated automatically by Google.
     </ul>
   </div>
 
@@ -304,7 +317,8 @@
     <h2>Data Retention</h2>
     <ul>
       <li><strong>Active account data</strong> — retained as long as your account exists</li>
-      <li><strong>Check-in logs</strong> — retained for 12 months, then automatically deleted</li>
+      <li><strong>Check-in logs</strong> — Nomination — Under DPDP Act 2023 Section 14, you may designate a person to exercise your data rights after your death. Email privacy@sabtheekhai.com 
+        with subject line "DPDP Nominee Designation" to register a nominee.</li>
       <li><strong>Rate limit records</strong> — deleted automatically after 24 hours</li>
       <li><strong>Deleted accounts</strong> — all data permanently deleted within 30 days of account deletion</li>
     </ul>
@@ -333,13 +347,15 @@
     <div class="section-icon">👧</div>
     <h2>Children's Privacy</h2>
     <p>
-      Sab Theek Hain is designed to help keep children and young people safe.
-      The app may be used by or on behalf of minors with parental consent.
+      Sab Theek Hai is intended exclusively for users aged 18 years and above. 
+      We do not collect, process, or store personal data from anyone under the age of 18.
     </p>
     <p>
-      We do not knowingly collect personal data from children under 13 without
-      verifiable parental consent. If you believe a child under 13 has provided
-      us data without consent, please contact us immediately and we will delete it.
+      Under India's Digital Personal Data Protection Act 2023 (DPDP), a "child" means any 
+      person under the age of 18. We do not process children's data under any circumstance,
+      including with parental consent, as our app is not designed or intended for minors.
+      If you believe a person under 18 has created an account, please contact privacy@sabtheekhai.com 
+      immediately and we will delete the account and all associated data within 72 hours.
     </p>
   </div>
 
@@ -378,6 +394,18 @@
         <td>ACCESS_COARSE_LOCATION (optional)</td>
         <td>To include your approximate location in safety alerts. You can decline this and the app works fully without it.</td>
       </tr>
+      <tr>
+  <td>ACCESS_FINE_LOCATION / ACCESS_BACKGROUND_LOCATION</td>
+  <td>To include your precise GPS location in SOS and check-in alerts. Only active when you tap a button. Requires your explicit permission.</td>
+</tr>
+<tr>
+  <td>FOREGROUND_SERVICE_LOCATION</td>
+  <td>To maintain the safety monitoring service while the app is in the background. A persistent notification is shown at all times when active.</td>
+</tr>
+<tr>
+  <td>RECEIVE_BOOT_COMPLETED</td>
+  <td>To restore your scheduled reminders after your phone restarts. No personal data is collected by this permission.</td>
+</tr
     </table>
     <div class="highlight">
       <p>✅ We do NOT request CAMERA, MICROPHONE, READ_CONTACTS, or any other sensitive permission.</p>
@@ -407,7 +435,7 @@
       </tr>
       <tr>
         <td>Email</td>
-        <td>privacy@sabtheekhain.app</td>
+        <td>privacy@sabtheekhai.com</td>
       </tr>
       <tr>
         <td>Response time</td>
@@ -447,7 +475,7 @@
 </div>
 
 <div class="footer">
-  © 2026 Sab Theek Hain. All rights reserved. &nbsp;·&nbsp;
+  © 2026 Sab Theek Hai. All rights reserved. &nbsp;·&nbsp;
   Made with ❤️ in Mumbai, India &nbsp;·&nbsp;
   Data stored in Mumbai (asia-south1)
 </div>
