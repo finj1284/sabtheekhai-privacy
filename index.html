@@ -2,483 +2,510 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Sab Theek Hai</title>
   <style>
+    /* ── Design: clean, legible, trust-building. Not flashy. ── */
+    :root {
+      --bg: #0a0f1a;
+      --surface: #111827;
+      --border: rgba(255,255,255,0.08);
+      --accent: #10b981;
+      --accent2: #3b82f6;
+      --text: #f1f5f9;
+      --muted: #9ca3af;
+      --danger: #ef4444;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #F8FAFF;
-      color: #1A2340;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
       line-height: 1.7;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 24px 16px 80px;
     }
-    .header {
-      background: linear-gradient(135deg, #0052CC, #1A6FE8);
-      color: white;
-      padding: 40px 24px 32px;
-      text-align: center;
+
+    /* Language tabs */
+    .lang-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      padding: 12px 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--border);
     }
-    .header-icon { font-size: 48px; margin-bottom: 12px; }
-    .header h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
-    .header p  { font-size: 14px; opacity: 0.8; }
-    .badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.3);
+
+    .lang-btn {
+      padding: 6px 14px;
       border-radius: 20px;
-      padding: 5px 14px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+
+    .lang-btn.active {
+      background: rgba(16,185,129,0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Sections */
+    .policy-section { display: none; }
+    .policy-section.active { display: block; }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .last-updated {
+      display: inline-block;
+      background: rgba(16,185,129,0.1);
+      border: 1px solid rgba(16,185,129,0.2);
+      color: var(--accent);
       font-size: 12px;
       font-weight: 600;
-      margin-top: 10px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 28px;
     }
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 32px 24px 60px;
-    }
-    .last-updated {
-      background: #E8F0FF;
-      border-left: 4px solid #0052CC;
-      padding: 12px 16px;
-      border-radius: 0 8px 8px 0;
-      font-size: 13px;
-      color: #0052CC;
-      font-weight: 600;
-      margin-bottom: 32px;
-    }
-    .section {
-      background: white;
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 16px;
-      border: 1px solid #E2E8F0;
-      box-shadow: 0 2px 8px rgba(0,82,204,0.06);
-    }
-    .section-icon { font-size: 24px; margin-bottom: 10px; }
+
     h2 {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 800;
-      color: #0052CC;
-      margin-bottom: 12px;
+      color: var(--accent2);
+      margin: 28px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.3px;
     }
-    h3 {
-      font-size: 15px;
-      font-weight: 700;
-      color: #1A2340;
-      margin: 16px 0 8px;
+
+    p { color: var(--muted); margin-bottom: 12px; }
+
+    ul {
+      list-style: none;
+      margin-bottom: 14px;
     }
-    p  { font-size: 14px; color: #44546F; margin-bottom: 10px; }
-    ul { padding-left: 20px; margin-bottom: 10px; }
-    li { font-size: 14px; color: #44546F; margin-bottom: 6px; }
-    .highlight {
-      background: #E3FCEF;
-      border: 1px solid rgba(0,135,90,0.2);
-      border-radius: 10px;
-      padding: 14px 16px;
-      margin: 12px 0;
+
+    ul li {
+      color: var(--muted);
+      padding: 5px 0 5px 18px;
+      position: relative;
+      font-size: 14px;
     }
-    .highlight p { color: #00875A; font-weight: 600; margin: 0; font-size: 13px; }
-    .warning {
-      background: #FFF3E0;
-      border: 1px solid rgba(255,139,0,0.25);
-      border-radius: 10px;
-      padding: 14px 16px;
-      margin: 12px 0;
+
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
     }
-    .warning p { color: #92400E; font-weight: 600; margin: 0; font-size: 13px; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 12px 0;
-      font-size: 13px;
+
+    strong { color: var(--text); font-weight: 700; }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 12px 0 20px;
     }
-    th {
-      background: #F0F6FF;
-      color: #0052CC;
-      font-weight: 700;
-      padding: 10px 12px;
-      text-align: left;
-      border-bottom: 2px solid #E2E8F0;
+
+    @media (max-width: 500px) {
+      .rights-grid { grid-template-columns: 1fr; }
     }
-    td {
-      padding: 10px 12px;
-      border-bottom: 1px solid #F1F5F9;
-      color: #44546F;
-      vertical-align: top;
+
+    .right-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
     }
-    tr:last-child td { border-bottom: none; }
-    .contact-box {
-      background: linear-gradient(135deg, #0052CC, #1A6FE8);
-      color: white;
-      border-radius: 16px;
-      padding: 24px;
-      text-align: center;
+
+    .right-card .emoji { font-size: 20px; margin-bottom: 6px; display: block; }
+    .right-card .right-title { font-weight: 700; color: var(--text); font-size: 13px; display: block; margin-bottom: 4px; }
+    .right-card .right-desc { color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+    .dpo-box {
+      background: rgba(59,130,246,0.06);
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 14px;
+      padding: 18px;
       margin-top: 24px;
     }
-    .contact-box h2 { color: white; }
-    .contact-box p  { color: rgba(255,255,255,0.8); }
-    .contact-box a  { color: white; font-weight: 700; }
-    .footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 12px;
-      color: #94A3B8;
+
+    .dpo-box h3 { color: var(--accent2); font-size: 14px; font-weight: 800; margin-bottom: 8px; }
+    .dpo-box p { font-size: 13px; }
+    .dpo-box a { color: var(--accent2); font-weight: 700; text-decoration: none; }
+    .dpo-box a:hover { text-decoration: underline; }
+
+    .warning-box {
+      background: rgba(239,68,68,0.06);
+      border: 1px solid rgba(239,68,68,0.2);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 16px 0;
     }
+
+    .warning-box p { color: #fca5a5; font-size: 13px; margin: 0; }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
   </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="header-icon">🛡️</div>
-  <h1>Privacy Policy</h1>
-  <p>Sab Theek Hain — Family Safety App</p>
-  <span class="badge">Effective: April 2026</span>
+<!-- Language switcher -->
+<div class="lang-tabs">
+  <button class="lang-btn active" onclick="showLang('en')">English</button>
+  <button class="lang-btn" onclick="showLang('hi')">हिन्दी</button>
+  <button class="lang-btn" onclick="showLang('mr')">मराठी</button>
+  <button class="lang-btn" onclick="showLang('gu')">ગુજરાતી</button>
+  <button class="lang-btn" onclick="showLang('ar')">العربية</button>
 </div>
 
-<div class="container">
 
-  <div class="last-updated">
-    📅 Last Updated: April 26, 2026 &nbsp;·&nbsp; Version 1.0 &nbsp;·&nbsp; Applies to Android app and web app
+<!-- ═══════════════ ENGLISH ═══════════════ -->
+<section class="policy-section active" id="lang-en">
+  <h1>🛡️ Privacy Policy</h1>
+  <p class="subtitle">Sab Theek Hai — Guardian Safety Check-in App</p>
+  <span class="last-updated">Last Updated: May 2026</span>
+
+  <h2>1. Who We Are</h2>
+  <p><strong>Sab Theek Hai</strong> is a personal safety check-in application operated by <strong>FCJ Technologies</strong> (DBA Sab Theek Hai), registered in India. Our Data Protection Officer can be reached at <a href="mailto:sabtheekhain.guardianapp@gmail.com" style="color:#3b82f6">sabtheekhain.guardianapp@gmail.com</a>.</p>
+
+  <h2>2. What We Collect</h2>
+  <ul>
+    <li><strong>Name & Email</strong> — to create and manage your account</li>
+    <li><strong>Phone number</strong> — for emergency contact setup</li>
+    <li><strong>Precise GPS location</strong> — only when you actively send a check-in or SOS alert (not continuously)</li>
+    <li><strong>Device ID (FCM token)</strong> — to send safety notifications to your device</li>
+    <li><strong>Subscription history</strong> — to manage your active plan</li>
+    <li><strong>Consent record</strong> — timestamp, language, and version of your consent (required by DPDP Act 2023)</li>
+  </ul>
+
+  <div class="warning-box">
+    <p>⚠️ We do NOT collect location continuously. GPS is only accessed when you tap a check-in or SOS button. We do NOT sell your data to advertisers.</p>
   </div>
 
-  <!-- INTRO -->
-  <div class="section">
-    <div class="section-icon">👋</div>
-    <h2>About This Policy</h2>
-    <p>
-      Sab Theek Hain ("we", "our", "the app") is a family safety check-in application
-      that allows users to notify their family members that they are safe via Telegram messages.
-      This Privacy Policy explains what data we collect, why we collect it, how we store it,
-      and your rights over your data.
-    </p>
-    <p>
-      We obtain your explicit, informed consent before collecting any personal data, as required by the Digital Personal Data 
-      Protection Act 2023 (DPDP Act). You will be asked to review and actively agree to this policy before creating an account.
-      If you do not agree, please do not use the app.
-      You may withdraw your consent at any time from Settings → My Data → Withdraw Consent
+  <h2>3. How We Use Your Data</h2>
+  <ul>
+    <li>Send your location to your chosen emergency contacts via Telegram when you trigger a check-in or SOS</li>
+    <li>Send safety notifications to your device</li>
+    <li>Manage your subscription and billing</li>
+    <li>Comply with India's DPDP Act 2023 and applicable laws</li>
+  </ul>
 
-      Withdraw consent — you may withdraw consent for location data collection at any time from Settings → My Data → Withdraw Consent, 
-      without deleting your account. Withdrawing consent disables location-based features.
+  <h2>4. Data Retention</h2>
+  <ul>
+    <li><strong>Check-in GPS coordinates:</strong> Auto-deleted after 30 days</li>
+    <li><strong>Account data:</strong> Deleted within 30 days of account deletion request</li>
+    <li><strong>Consent records:</strong> Retained for the life of your account</li>
+    <li><strong>Audit logs:</strong> Retained for 2 years (legal requirement)</li>
+  </ul>
 
-      Account deletion — permanently delete your account and all data from Settings → Account → Delete Account. All data is purged 
-      within 30 days.
-    </p>
-    <div class="highlight">
-      <p>✅ We do not collect biometric data, face recognition data, or photos.
-      The app uses a one-tap check-in button. No camera access is required.</p>
+  <h2>5. Who Sees Your Data</h2>
+  <p>Only your chosen emergency contacts receive your location via Telegram when you actively trigger an alert. We use the following third-party services:</p>
+  <ul>
+    <li><strong>Google Firebase</strong> — authentication, database, push notifications</li>
+    <li><strong>Telegram</strong> — message delivery to emergency contacts</li>
+    <li><strong>Razorpay</strong> — payment processing (we never store card details)</li>
+    <li><strong>Google Maps</strong> — location link generation</li>
+  </ul>
+
+  <h2>6. Your Rights Under DPDP Act 2023</h2>
+  <div class="rights-grid">
+    <div class="right-card">
+      <span class="emoji">📥</span>
+      <span class="right-title">Access</span>
+      <span class="right-desc">Download all data we hold about you from Settings → My Data.</span>
+    </div>
+    <div class="right-card">
+      <span class="emoji">✏️</span>
+      <span class="right-title">Correct</span>
+      <span class="right-desc">Update your profile, phone number, or emergency contacts anytime.</span>
+    </div>
+    <div class="right-card">
+      <span class="emoji">🗑️</span>
+      <span class="right-title">Erase</span>
+      <span class="right-desc">Request full account deletion. Data wiped within 30 days.</span>
+    </div>
+    <div class="right-card">
+      <span class="emoji">👤</span>
+      <span class="right-title">Nominate</span>
+      <span class="right-desc">Designate someone to exercise your rights after your death.</span>
+    </div>
+    <div class="right-card">
+      <span class="emoji">🔒</span>
+      <span class="right-title">Withdraw Consent</span>
+      <span class="right-desc">Revoke consent anytime from Settings → My Data. Stops all processing immediately.</span>
+    </div>
+    <div class="right-card">
+      <span class="emoji">📋</span>
+      <span class="right-title">Grievance</span>
+      <span class="right-desc">File a complaint with our DPO. Response within 72 hours.</span>
     </div>
   </div>
 
-  <!-- DATA WE COLLECT -->
-  <div class="section">
-    <div class="section-icon">📋</div>
-    <h2>Data We Collect</h2>
+  <h2>7. Children's Data</h2>
+  <p>This app is not intended for users under 18 years of age. We do not knowingly collect data from minors. Age confirmation is required during registration as mandated by DPDP Act 2023 Section 9.</p>
 
-    <table>
-      <tr>
-        <th>Data Type</th>
-        <th>What It Is</th>
-        <th>Why We Collect It</th>
-      </tr>
-      <tr>
-        <td><strong>Email address</strong></td>
-        <td>Your email used to sign in</td>
-        <td>Firebase Authentication — to identify your account</td>
-      </tr>
-      <tr>
-        <td><strong>Display name</strong></td>
-        <td>Your name shown in the app</td>
-        <td>Included in Telegram safety alerts to your family</td>
-      </tr>
-      <tr>
-        <td><strong>Phone number</strong></td>
-        <td>Optional — if you sign in via phone</td>
-        <td>Firebase Authentication only</td>
-      </tr>
-      <tr>
-        <td><strong>Telegram Chat IDs</strong></td>
-        <td>Numeric IDs of your emergency contacts</td>
-        <td>To deliver safety alerts to your family via Telegram Bot</td>
-      </tr>
-      <tr>
-        <td><strong>Check-in log</strong></td>
-        <td>Timestamp and count of check-ins</td>
-        <td>To show your activity history and usage statistics</td>
-      </tr>
-      <tr>
-        <td><strong>Precise GPS location</strong></td>
-        <td>Latitude/longitude coordinates — collected ONLY when you actively tap Check-in or SOS.
-        Sent to emergency contacts via Telegram.Coordinates purged from our servers after 30 days.
-        Never collected in background without your action.</td>
-        <td>Approximate location - City-level fallback when precise GPS is unavailable. Optional. </td>
-      </tr>
-      <tr>
-        <td><strong>Device timezone</strong></td>
-        <td>Your device's timezone string (e.g. Asia/Kolkata)</td>
-        <td>To schedule reminders at the correct local time</td>
-      </tr>
-      <tr>
-        <td><strong>Subscription status</strong></td>
-        <td>Free or paid plan, billing dates</td>
-        <td>To determine which features you can access</td>
-      </tr>
-    </table>
+  <h2>8. Data Security</h2>
+  <p>All data is encrypted in transit (TLS 1.2+) and at rest. Firebase Security Rules restrict access so only the account owner can read their data. We conduct periodic security reviews.</p>
 
-    <h3>Data We Do NOT Collect</h3>
-    <ul>
-      <li>❌ No photos or images of any kind</li>
-      <li>❌ No biometric data (fingerprints, face data, iris scans)</li>
-      <li>❌ No face recognition or facial landmark data</li>
-      <li>❌ Precise GPS coordinates are never stored permanently purged within 30 days and never used for any purpose other than the alert you actively triggered — </li>
-      <li>❌ No contacts from your phone's address book</li>
-      <li>❌ No microphone audio</li>
-      <li>❌ No browsing history or data from other apps</li>
-      <li>❌ No advertising identifiers</li>
-      
-      <li>   Device identifier (FCM token) | Push notification token assigned by Google | To send safety reminders and SOS alerts to your device. Not linked to your identity. 
-             Rotated automatically by Google.
-    </ul>
+  <h2>9. Cross-Border Transfers</h2>
+  <p>Your data is stored on Google Firebase servers. Firebase operates data centres in multiple regions. For users in Gulf countries (UAE, Saudi Arabia, Qatar), your data may be stored in servers outside your country in compliance with applicable data transfer agreements.</p>
+
+  <h2>10. Changes to This Policy</h2>
+  <p>If we materially change this policy, you will be asked to review and re-consent within the app before continuing to use it. The consent version number will be incremented.</p>
+
+  <div class="dpo-box">
+    <h3>📬 Data Protection Officer</h3>
+    <p>For any privacy concern, rights request, or grievance:</p>
+    <p style="margin-top:8px"><a href="mailto:sabtheekhain.guardianapp@gmail.com">sabtheekhain.guardianapp@gmail.com</a></p>
+    <p style="margin-top:4px;font-size:12px">We respond within 72 hours as required by DPDP Act 2023.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════ HINDI ═══════════════ -->
+<section class="policy-section" id="lang-hi">
+  <h1>🛡️ गोपनीयता नीति</h1>
+  <p class="subtitle">सब ठीक है — गार्डियन सेफ्टी चेक-इन ऐप</p>
+  <span class="last-updated">अंतिम अपडेट: मई 2026</span>
+
+  <h2>1. हम कौन हैं</h2>
+  <p><strong>सब ठीक है</strong> एक व्यक्तिगत सुरक्षा चेक-इन ऐप है जो <strong>FCJ Technologies</strong> द्वारा संचालित है, जो भारत में पंजीकृत है। हमारे डेटा संरक्षण अधिकारी से संपर्क करें: <a href="mailto:sabtheekhain.guardianapp@gmail.com" style="color:#3b82f6">sabtheekhain.guardianapp@gmail.com</a></p>
+
+  <h2>2. हम क्या एकत्र करते हैं</h2>
+  <ul>
+    <li><strong>नाम और ईमेल</strong> — खाता बनाने और प्रबंधित करने के लिए</li>
+    <li><strong>फोन नंबर</strong> — आपातकालीन संपर्क सेटअप के लिए</li>
+    <li><strong>सटीक GPS स्थान</strong> — केवल जब आप चेक-इन या SOS बटन दबाते हैं (लगातार नहीं)</li>
+    <li><strong>डिवाइस ID</strong> — सुरक्षा सूचनाएं भेजने के लिए</li>
+    <li><strong>सदस्यता इतिहास</strong> — आपकी योजना प्रबंधित करने के लिए</li>
+    <li><strong>सहमति रिकॉर्ड</strong> — DPDP अधिनियम 2023 के तहत आवश्यक</li>
+  </ul>
+
+  <div class="warning-box">
+    <p>⚠️ हम GPS लगातार एकत्र नहीं करते। आपका डेटा विज्ञापनदाताओं को नहीं बेचा जाता।</p>
   </div>
 
-  <!-- HOW WE USE DATA -->
-  <div class="section">
-    <div class="section-icon">🔧</div>
-    <h2>How We Use Your Data</h2>
-    <p>We use your data for the following purposes only:</p>
-    <ul>
-      <li><strong>Sending safety alerts</strong> — your name and check-in time are included in the Telegram message sent to your emergency contacts</li>
-      <li><strong>Authentication</strong> — your email identifies your account and keeps it secure</li>
-      <li><strong>Scheduling reminders</strong> — your timezone is used to fire reminders at the correct local time</li>
-      <li><strong>Rate limiting</strong> — we track your last check-in time to prevent accidental spam (one alert per 5 minutes)</li>
-      <li><strong>Subscription management</strong> — to know which features you have access to</li>
-    </ul>
-    <div class="warning">
-      <p>⚠️ We never use your data for advertising, profiling, or selling to third parties. Ever.</p>
-    </div>
+  <h2>3. डेटा प्रतिधारण</h2>
+  <ul>
+    <li><strong>GPS निर्देशांक:</strong> 30 दिनों के बाद स्वचालित रूप से हटाए जाते हैं</li>
+    <li><strong>खाता डेटा:</strong> खाता हटाने के अनुरोध के 30 दिनों के भीतर हटाया जाता है</li>
+    <li><strong>ऑडिट लॉग:</strong> 2 साल तक रखे जाते हैं (कानूनी आवश्यकता)</li>
+  </ul>
+
+  <h2>4. DPDP अधिनियम 2023 के तहत आपके अधिकार</h2>
+  <ul>
+    <li><strong>📥 पहुंच</strong> — सेटिंग्स → मेरा डेटा से सभी डेटा डाउनलोड करें</li>
+    <li><strong>✏️ सुधार</strong> — कभी भी अपनी प्रोफ़ाइल अपडेट करें</li>
+    <li><strong>🗑️ मिटाना</strong> — 30 दिनों के भीतर पूर्ण खाता हटाने का अनुरोध करें</li>
+    <li><strong>👤 नामांकन</strong> — किसी को अपने अधिकार सौंपें</li>
+    <li><strong>🔒 सहमति वापस लेना</strong> — कभी भी, तुरंत प्रभाव से</li>
+  </ul>
+
+  <h2>5. बच्चों का डेटा</h2>
+  <p>यह ऐप 18 वर्ष से कम उम्र के उपयोगकर्ताओं के लिए नहीं है। DPDP अधिनियम 2023 की धारा 9 के अनुसार पंजीकरण के दौरान आयु की पुष्टि आवश्यक है।</p>
+
+  <div class="dpo-box">
+    <h3>📬 डेटा संरक्षण अधिकारी</h3>
+    <p>किसी भी गोपनीयता संबंधी चिंता के लिए:</p>
+    <p style="margin-top:8px"><a href="mailto:sabtheekhain.guardianapp@gmail.com">sabtheekhain.guardianapp@gmail.com</a></p>
+    <p style="margin-top:4px;font-size:12px">हम DPDP अधिनियम 2023 के अनुसार 72 घंटों के भीतर जवाब देते हैं।</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════ MARATHI ═══════════════ -->
+<section class="policy-section" id="lang-mr">
+  <h1>🛡️ गोपनीयता धोरण</h1>
+  <p class="subtitle">सब ठीक है — गार्डियन सेफ्टी चेक-इन ॲप</p>
+  <span class="last-updated">शेवटचे अपडेट: मे 2026</span>
+
+  <h2>1. आम्ही कोण आहोत</h2>
+  <p><strong>सब ठीक है</strong> हे FCJ Technologies द्वारे चालवले जाणारे वैयक्तिक सुरक्षा ॲप आहे. डेटा संरक्षण अधिकाऱ्याशी संपर्क: <a href="mailto:sabtheekhain.guardianapp@gmail.com" style="color:#3b82f6">sabtheekhain.guardianapp@gmail.com</a></p>
+
+  <h2>2. आम्ही काय गोळा करतो</h2>
+  <ul>
+    <li><strong>नाव आणि ईमेल</strong> — खाते तयार करण्यासाठी</li>
+    <li><strong>फोन नंबर</strong> — आपत्कालीन संपर्क सेटअपसाठी</li>
+    <li><strong>अचूक GPS स्थान</strong> — फक्त चेक-इन किंवा SOS बटण दाबल्यावर</li>
+    <li><strong>डिव्हाइस ID</strong> — सूचना पाठवण्यासाठी</li>
+    <li><strong>सदस्यता इतिहास</strong> — आपली योजना व्यवस्थापित करण्यासाठी</li>
+  </ul>
+
+  <div class="warning-box">
+    <p>⚠️ आम्ही GPS सतत गोळा करत नाही. आपला डेटा जाहिरातदारांना विकला जात नाही।</p>
   </div>
 
-  <!-- WHERE DATA IS STORED -->
-  <div class="section">
-    <div class="section-icon">🗄️</div>
-    <h2>Where Your Data Is Stored</h2>
-    <p>
-      All user data is stored in <strong>Google Firebase Firestore</strong> in the
-      <strong>asia-south1 (Mumbai, India)</strong> region. Your data does not
-      leave India's geographic boundary on our servers.
-    </p>
-    <p>
-      Authentication is handled by <strong>Firebase Authentication</strong> (Google).
-      Payment processing is handled by <strong>Razorpay Software Pvt. Ltd.</strong>
-      (an Indian company, RBI regulated, PCI DSS compliant).
-    </p>
-    <p>
-      Telegram messages are delivered via the <strong>Telegram Bot API</strong>.
-      The only information sent to Telegram is your display name, check-in timestamp,
-      and optional approximate location. No account credentials are shared with Telegram.
-    </p>
+  <h2>3. DPDP कायदा 2023 अंतर्गत आपले हक्क</h2>
+  <ul>
+    <li><strong>📥 प्रवेश</strong> — सेटिंग्ज → माझा डेटा मधून सर्व डेटा डाउनलोड करा</li>
+    <li><strong>✏️ सुधारणा</strong> — कधीही आपली प्रोफाइल अपडेट करा</li>
+    <li><strong>🗑️ मिटवणे</strong> — 30 दिवसांत संपूर्ण खाते हटवण्याची विनंती</li>
+    <li><strong>🔒 संमती मागे घेणे</strong> — कधीही, तात्काळ प्रभावाने</li>
+  </ul>
+
+  <h2>4. डेटा किती काळ ठेवला जातो</h2>
+  <ul>
+    <li>GPS निर्देशांक: 30 दिवसांनंतर आपोआप हटवले जातात</li>
+    <li>खाते डेटा: हटवण्याच्या विनंतीनंतर 30 दिवसांत हटवला जातो</li>
+  </ul>
+
+  <div class="dpo-box">
+    <h3>📬 डेटा संरक्षण अधिकारी</h3>
+    <p><a href="mailto:sabtheekhain.guardianapp@gmail.com">sabtheekhain.guardianapp@gmail.com</a></p>
+    <p style="margin-top:4px;font-size:12px">आम्ही 72 तासांत उत्तर देतो।</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════ GUJARATI ═══════════════ -->
+<section class="policy-section" id="lang-gu">
+  <h1>🛡️ ગોપનીયતા નીતિ</h1>
+  <p class="subtitle">સબ ઠીક હૈ — ગાર્ડિયન સેફ્ટી ચેક-ઇન ઍપ</p>
+  <span class="last-updated">છેલ્લે અપડેટ: મે 2026</span>
+
+  <h2>1. અમે કોણ છીએ</h2>
+  <p><strong>સબ ઠીક હૈ</strong> FCJ Technologies દ્વારા સંચાલિત વ્યક્તિગત સલામતી ઍપ છે. ડેટા સંરક્ષણ અધિકારી: <a href="mailto:sabtheekhain.guardianapp@gmail.com" style="color:#3b82f6">sabtheekhain.guardianapp@gmail.com</a></p>
+
+  <h2>2. અમે શું એકત્ર કરીએ છીએ</h2>
+  <ul>
+    <li><strong>નામ અને ઈમેઈલ</strong> — એકાઉન્ટ બનાવવા માટે</li>
+    <li><strong>ફોન નંબર</strong> — ઈમર્જન્સી કોન્ટેક્ટ સેટઅપ માટે</li>
+    <li><strong>ચોક્કસ GPS સ્થાન</strong> — ફક્ત ત્યારે જ જ્યારે તમે ચેક-ઇન અથવા SOS બટન દબાવો</li>
+    <li><strong>ડિવાઇસ ID</strong> — સૂચનાઓ મોકલવા માટે</li>
+    <li><strong>સબ્સ્ક્રિપ્શન ઇતિહાસ</strong> — તમારી પ્લાન મેનેજ કરવા</li>
+  </ul>
+
+  <div class="warning-box">
+    <p>⚠️ અમે GPS સતત એકત્ર કરતા નથી. તમારો ડેટા જાહેરાતકર્તાઓને વેચવામાં આવતો નથી.</p>
   </div>
 
-  <!-- DATA SHARING -->
-  <div class="section">
-    <div class="section-icon">🤝</div>
-    <h2>Data Sharing</h2>
-    <p>We share your data with the following third parties only as necessary to operate the app:</p>
-    <table>
-      <tr>
-        <th>Third Party</th>
-        <th>What They Receive</th>
-        <th>Why</th>
-      </tr>
-      <tr>
-        <td>Google Firebase</td>
-        <td>All stored data (encrypted)</td>
-        <td>Database and authentication infrastructure</td>
-      </tr>
-      <tr>
-        <td>Telegram</td>
-        <td>Name + timestamp + optional location</td>
-        <td>Delivering safety alert messages</td>
-      </tr>
-      <tr>
-        <td>Razorpay Software Pvt. Ltd.</td>
-<td>Email, phone, subscription details</td>
-<td>Processing subscription payments via UPI, cards, and net banking</td>
-      </tr>
-    </table>
-    <p>
-      We do <strong>not</strong> share your data with advertisers, data brokers,
-      analytics companies, or any other third party not listed above.
-    </p>
+  <h2>3. DPDP અધિનિયમ 2023 હેઠળ તમારા અધિકારો</h2>
+  <ul>
+    <li><strong>📥 ઍક્સેસ</strong> — Settings → My Data માંથી બધો ડેટા ડાઉનલોડ કરો</li>
+    <li><strong>✏️ સુધારો</strong> — ગમે ત્યારે તમારી પ્રોફાઇલ અપડેટ કરો</li>
+    <li><strong>🗑️ ભૂંસો</strong> — 30 દિવસમાં સંપૂર્ણ એકાઉન્ટ ડિલીટ કરવાની વિનંતી</li>
+    <li><strong>🔒 સંમતિ પાછી ખેંચો</strong> — ગમે ત્યારે, તાત્કાલિક અસર સાથે</li>
+  </ul>
+
+  <div class="dpo-box">
+    <h3>📬 ડેટા સંરક્ષણ અધિકારી</h3>
+    <p><a href="mailto:sabtheekhain.guardianapp@gmail.com">sabtheekhain.guardianapp@gmail.com</a></p>
+    <p style="margin-top:4px;font-size:12px">અમે 72 કલાકમાં જવાબ આપીએ છીએ.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════ ARABIC ═══════════════ -->
+<section class="policy-section" id="lang-ar" dir="rtl" style="text-align:right">
+  <h1>🛡️ سياسة الخصوصية</h1>
+  <p class="subtitle">سب ثيك هاي — تطبيق فحص السلامة الشخصية</p>
+  <span class="last-updated">آخر تحديث: مايو 2026</span>
+
+  <h2>1. من نحن</h2>
+  <p>يُشغّل تطبيق <strong>سب ثيك هاي</strong> شركةُ FCJ Technologies المسجّلة في الهند. للتواصل مع مسؤول حماية البيانات: <a href="mailto:sabtheekhain.guardianapp@gmail.com" style="color:#3b82f6">sabtheekhain.guardianapp@gmail.com</a></p>
+
+  <h2>2. ما الذي نجمعه</h2>
+  <ul>
+    <li><strong>الاسم والبريد الإلكتروني</strong> — لإنشاء الحساب وإدارته</li>
+    <li><strong>رقم الهاتف</strong> — لإعداد جهة الاتصال في حالات الطوارئ</li>
+    <li><strong>موقع GPS الدقيق</strong> — فقط عند الضغط على زر تسجيل الوصول أو SOS</li>
+    <li><strong>معرّف الجهاز</strong> — لإرسال إشعارات السلامة</li>
+    <li><strong>سجل الاشتراك</strong> — لإدارة خطتك</li>
+  </ul>
+
+  <div class="warning-box">
+    <p>⚠️ لا نجمع GPS بشكل مستمر. لا نبيع بياناتك للمعلنين أبدًا.</p>
   </div>
 
-  <!-- DATA RETENTION -->
-  <div class="section">
-    <div class="section-icon">⏳</div>
-    <h2>Data Retention</h2>
-    <ul>
-      <li><strong>Active account data</strong> — retained as long as your account exists</li>
-      <li><strong>Check-in logs</strong> — Nomination — Under DPDP Act 2023 Section 14, you may designate a person to exercise your data rights after your death. Email privacy@sabtheekhai.com 
-        with subject line "DPDP Nominee Designation" to register a nominee.</li>
-      <li><strong>Rate limit records</strong> — deleted automatically after 24 hours</li>
-      <li><strong>Deleted accounts</strong> — all data permanently deleted within 30 days of account deletion</li>
-    </ul>
+  <h2>3. مدة الاحتفاظ بالبيانات</h2>
+  <ul>
+    <li>إحداثيات GPS: تُحذف تلقائيًا بعد 30 يومًا</li>
+    <li>بيانات الحساب: تُحذف خلال 30 يومًا من طلب الحذف</li>
+    <li>سجلات التدقيق: تُحتفظ بها لمدة سنتين (متطلب قانوني)</li>
+  </ul>
+
+  <h2>4. حقوقك</h2>
+  <ul>
+    <li><strong>📥 الوصول</strong> — تنزيل جميع بياناتك من الإعدادات</li>
+    <li><strong>✏️ التصحيح</strong> — تحديث ملفك الشخصي في أي وقت</li>
+    <li><strong>🗑️ المحو</strong> — طلب حذف الحساب بالكامل خلال 30 يومًا</li>
+    <li><strong>🔒 سحب الموافقة</strong> — في أي وقت، بأثر فوري</li>
+  </ul>
+
+  <h2>5. بيانات الأطفال</h2>
+  <p>هذا التطبيق غير مخصص للمستخدمين دون سن 18 عامًا. يُشترط التحقق من العمر عند التسجيل.</p>
+
+  <div class="dpo-box">
+    <h3>📬 مسؤول حماية البيانات</h3>
+    <p><a href="mailto:sabtheekhain.guardianapp@gmail.com">sabtheekhain.guardianapp@gmail.com</a></p>
+    <p style="margin-top:4px;font-size:12px">نرد خلال 72 ساعة.</p>
   </div>
+</section>
 
-  <!-- YOUR RIGHTS -->
-  <div class="section">
-    <div class="section-icon">⚖️</div>
-    <h2>Your Rights (DPDP Act 2023)</h2>
-    <p>Under India's Digital Personal Data Protection Act 2023, you have the right to:</p>
-    <ul>
-      <li><strong>Access</strong> — request a copy of all data we hold about you</li>
-      <li><strong>Correction</strong> — request correction of inaccurate data</li>
-      <li><strong>Erasure</strong> — request deletion of your account and all associated data</li>
-      <li><strong>Grievance redressal</strong> — raise a complaint with our Grievance Officer</li>
-      <li><strong>Withdraw consent</strong> — delete your account at any time in app Settings</li>
-    </ul>
-    <div class="highlight">
-      <p>✅ You can delete your account and all data directly from the app:
-      Settings → Account → Delete Account. Data is permanently removed within 30 days.</p>
-    </div>
-  </div>
 
-  <!-- CHILDREN -->
-  <div class="section">
-    <div class="section-icon">👧</div>
-    <h2>Children's Privacy</h2>
-    <p>
-      Sab Theek Hai is intended exclusively for users aged 18 years and above. 
-      We do not collect, process, or store personal data from anyone under the age of 18.
-    </p>
-    <p>
-      Under India's Digital Personal Data Protection Act 2023 (DPDP), a "child" means any 
-      person under the age of 18. We do not process children's data under any circumstance,
-      including with parental consent, as our app is not designed or intended for minors.
-      If you believe a person under 18 has created an account, please contact privacy@sabtheekhai.com 
-      immediately and we will delete the account and all associated data within 72 hours.
-    </p>
-  </div>
+<footer>
+  <p>© 2026 Sab Theek Hai · FCJ Technologies · India</p>
+  <p style="margin-top:6px">
+    <a href="mailto:sabtheekhain.guardianapp@gmail.com">sabtheekhain.guardianapp@gmail.com</a>
+    &nbsp;·&nbsp;
+    <a href="https://finj1284.github.io/sabtheekhai-privacy/">English version</a>
+  </p>
+</footer>
 
-  <!-- SECURITY -->
-  <div class="section">
-    <div class="section-icon">🔒</div>
-    <h2>Security</h2>
-    <p>We protect your data using:</p>
-    <ul>
-      <li>Firebase Security Rules — users can only access their own data</li>
-      <li>HTTPS / TLS encryption for all data in transit</li>
-      <li>Google's encryption at rest for all Firestore data</li>
-      <li>Rate limiting to prevent abuse</li>
-      <li>No passwords stored — Firebase Authentication handles credentials securely</li>
-    </ul>
-  </div>
+<script>
+  function showLang(lang) {
+    // Hide all sections
+    document.querySelectorAll(".policy-section").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
 
-  <!-- PERMISSIONS -->
-  <div class="section">
-    <div class="section-icon">📱</div>
-    <h2>App Permissions</h2>
-    <table>
-      <tr>
-        <th>Permission</th>
-        <th>Why Required</th>
-      </tr>
-      <tr>
-        <td>INTERNET</td>
-        <td>To send safety alerts and sync data with Firebase</td>
-      </tr>
-      <tr>
-        <td>POST_NOTIFICATIONS</td>
-        <td>To send local reminders when you set a check-in time</td>
-      </tr>
-      <tr>
-        <td>ACCESS_COARSE_LOCATION (optional)</td>
-        <td>To include your approximate location in safety alerts. You can decline this and the app works fully without it.</td>
-      </tr>
-      <tr>
-  <td>ACCESS_FINE_LOCATION / ACCESS_BACKGROUND_LOCATION</td>
-  <td>To include your precise GPS location in SOS and check-in alerts. Only active when you tap a button. Requires your explicit permission.</td>
-</tr>
-<tr>
-  <td>FOREGROUND_SERVICE_LOCATION</td>
-  <td>To maintain the safety monitoring service while the app is in the background. A persistent notification is shown at all times when active.</td>
-</tr>
-<tr>
-  <td>RECEIVE_BOOT_COMPLETED</td>
-  <td>To restore your scheduled reminders after your phone restarts. No personal data is collected by this permission.</td>
-</tr
-    </table>
-    <div class="highlight">
-      <p>✅ We do NOT request CAMERA, MICROPHONE, READ_CONTACTS, or any other sensitive permission.</p>
-    </div>
-  </div>
+    // Show selected
+    const section = document.getElementById("lang-" + lang);
+    if (section) section.classList.add("active");
 
-  <!-- GRIEVANCE OFFICER -->
-  <div class="section">
-    <div class="section-icon">🧑‍⚖️</div>
-    <h2>Grievance Officer (India — IT Act 2000 &amp; DPDP Act 2023)</h2>
-    <p>
-      As required under the Information Technology Act 2000 and the Digital Personal
-      Data Protection Act 2023, we have designated a Grievance Officer for Indian users:
-    </p>
-    <table>
-      <tr>
-        <th>Detail</th>
-        <th>Information</th>
-      </tr>
-      <tr>
-        <td>Name</td>
-        <td>Finley Jacinto</td>
-      </tr>
-      <tr>
-        <td>Designation</td>
-        <td>Grievance Officer — Sab Theek Hain</td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td>privacy@sabtheekhai.com</td>
-      </tr>
-      <tr>
-        <td>Response time</td>
-        <td>Within 30 days of receiving your complaint</td>
-      </tr>
-      <tr>
-        <td>Working hours</td>
-        <td>Monday – Friday, 10am – 6pm IST</td>
-      </tr>
-    </table>
-  </div>
+    // Set RTL for Arabic
+    document.body.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
 
-  <!-- CHANGES -->
-  <div class="section">
-    <div class="section-icon">📝</div>
-    <h2>Changes to This Policy</h2>
-    <p>
-      If we make material changes to this policy, we will notify you via
-      an in-app notification at least 7 days before the changes take effect.
-      The "Last Updated" date at the top of this page will always reflect
-      the most recent version.
-    </p>
-    <p>
-      Continued use of the app after changes means you accept the updated policy.
-    </p>
-  </div>
+    // Mark active tab
+    event.target.classList.add("active");
 
-  <!-- CONTACT -->
-  <div class="contact-box">
-    <h2>Questions or Concerns?</h2>
-    <p>We take your privacy seriously. Contact us any time.</p>
-    <br/>
-    <p>📧 <a href="mailto:sabtheekhain.guardianapp@gmail.com">privacy@sabtheekhain.app</a></p>
-    <p style="margin-top:8px; font-size:13px; opacity:0.7;">We respond within 30 days as required by law.</p>
-  </div>
-
-</div>
-
-<div class="footer">
-  © 2026 Sab Theek Hai. All rights reserved. &nbsp;·&nbsp;
-  Made with ❤️ in Mumbai, India &nbsp;·&nbsp;
-  Data stored in Mumbai (asia-south1)
-</div>
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+</script>
 
 </body>
 </html>
